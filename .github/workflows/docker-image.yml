@@ -13,9 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: date
-        run: echo "::set-output name=today::$(date +%s)"
-      -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       -
@@ -30,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/mssql-sqlpackage:latest,${{ secrets.DOCKERHUB_USERNAME }}/mssql-sqlpackage:${{ steps.date.outputs.today }}
+          tags: jcgillespie/mssql-sqlpackage:latest
