@@ -1,13 +1,10 @@
-name: Docker Image CI
-
+name: Docker Image CICD
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
-    branches: [ main ]
-
 jobs:
   docker:
     runs-on: ubuntu-latest
