@@ -1,4 +1,4 @@
-FROM alpine:3.19.1 AS Unzipper
+FROM alpine:3.20.1 AS Unzipper
 RUN apk add --no-cache unzip wget
 # Install SQLPackage for Linux and make it executable
 RUN wget -progress=bar:force -q -O sqlpackage.zip https://aka.ms/sqlpackage-linux \
