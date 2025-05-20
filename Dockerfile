@@ -5,6 +5,6 @@ RUN wget -progress=bar:force -q -O sqlpackage.zip https://aka.ms/sqlpackage-linu
     && unzip -qq sqlpackage.zip -d /sqlpackage \
     && chmod +x /sqlpackage/sqlpackage
 
-FROM mcr.microsoft.com/mssql/server:2022-latest
+FROM mcr.microsoft.com/mssql/server:2025-latest
 COPY --from=Unzipper  /sqlpackage/ /opt/sqlpackage/
 CMD [ "/opt/mssql/bin/sqlservr" ]
